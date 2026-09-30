@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My QR Code</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f2f2f2;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 35px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 22px;
+            border: none;
+            border-radius: 12px;
+            background: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        #qrcode {
+            margin: 30px auto;
+            width: 256px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>👇👇👇 📸</h1>
+
+    <button onclick="showQR()">Go ☺️</button>
+
+    <div id="qrcode"></div>
+
+    <script>
+        function showQR() {
+
+            const photoURL =
+                "https://drive.google.com/file/d/1l7prcpzr7-n780KBmshGgLIROogACVr3/view?usp=drivesdk";
+
+            document.getElementById("qrcode").innerHTML = "";
+
+            new QRCode(document.getElementById("qrcode"), {
+                text: photoURL,
+                width: 256,
+                height: 256
+            });
+        }
+    </script>
+
+</body>
+
+</html>
