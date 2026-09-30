@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My QR Code</title>
+    <title>My Photo QR</title>
 
+    <!-- QR Code Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
             background: #f2f2f2;
@@ -44,26 +46,30 @@
 
 <body>
 
-    <h1>👇👇👇 📸</h1>
+    <h1>👇👇👇👇 📸</h1>
 
     <button onclick="showQR()">Go ☺️</button>
 
     <div id="qrcode"></div>
 
     <script>
+
         function showQR() {
 
             const photoURL =
                 "https://drive.google.com/file/d/1l7prcpzr7-n780KBmshGgLIROogACVr3/view?usp=drivesdk";
 
+            // QR အဟောင်းရှိရင် ဖျက်မယ်
             document.getElementById("qrcode").innerHTML = "";
 
+            // QR အသစ်ဖန်တီးမယ်
             new QRCode(document.getElementById("qrcode"), {
                 text: photoURL,
                 width: 256,
                 height: 256
             });
         }
+
     </script>
 
 </body>
